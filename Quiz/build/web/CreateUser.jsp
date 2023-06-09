@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Create User</title>
-        <link rel="stylesheet" href="css/register.css" />
+        <link rel="stylesheet" href="css/register1.css" />
     </head>
     <body>
         <div class="form_register">
@@ -33,8 +33,8 @@
                 <lable class="register_text">Date of birth</lable>
                 <input type="date" class="register_input" name="DOB">
                 <lable class="register_text">Student or Teacher?</lable><br>
-                <h2>Teacher</h2><input type="radio"  name="Role" value="2"> 
-                <h2>Student</h2><input type="radio"  name="Role" value="1"> 
+                <h2>Teacher</h2><input type="radio"  name="Role" value="1"> 
+                <h2>Student</h2><input type="radio"  name="Role" value="2"> 
                 <button class="register_btn" type="submit">Create</button>
             </form>
         </div>

@@ -13,15 +13,15 @@ public class AccountDAO {
     static PreparedStatement ps;
     static ResultSet rs;
 
-     public static Account getAccountById2(int id) {
+    public static Account getAccountById2(int id) {
         String sql = "Select * From Account Where AccountID = ?";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(sql);
-            ps.setInt(1, id);      
+            ps.setInt(1, id);
             rs = ps.executeQuery();
             if (rs.next()) {
-                
+
                 Account acc = new Account(
                         rs.getInt(1),
                         rs.getString(2),
@@ -39,7 +39,8 @@ public class AccountDAO {
         }
         return null;
     }
-    
+
+    // Dang dung
     public Account getAccountById(String id) {
         String sql = "Select * From Account Where AccountID = ?";
         try {
@@ -84,6 +85,7 @@ public class AccountDAO {
         return null;
     }
 
+    // Dang dung
     public static Account checkAccountExist(String username) {
         try {
             String query = "select * from account \n"
@@ -198,6 +200,7 @@ public class AccountDAO {
         }
     }
 
+    // Dang dung
     public Account login(String username, String password) {
         String sql = "select * from account\n"
                 + "where UserName = ? and Password= ?";
@@ -216,6 +219,7 @@ public class AccountDAO {
         return null;
     }
 
+    // Dang dung
     public void registerAccount(String firstname, String lastname, String username, String password, String phone, String email, String dob, int role) {
         String sql = "INSERT INTO Account(FirstName, LastName, UserName, Password, Phone, Email, DOB, Role)\n"
                 + "values(?,?,?,?,?,?,?,?)";
@@ -235,7 +239,8 @@ public class AccountDAO {
         } catch (Exception e) {
         }
     }
-        public void updateInfoAccount(String id, String first, String last, String phone, String email, String dob) {
+
+    public void updateInfoAccount(String id, String first, String last, String phone, String email, String dob) {
         String sql = "update account\n"
                 + "set FirstName=?, LastName=?, Phone=?, Email=?, DOB=?\n"
                 + "where AccountID =?";
@@ -253,8 +258,9 @@ public class AccountDAO {
             System.out.println("Error: " + e);
         }
     }
-        
-         public Account checkOldpass(String password, String username) {
+
+    // Dang dung
+    public Account checkOldpass(String password, String username) {
         String sql = "SELECT * FROM account WHERE password = ? and username = ?";
         try {
             conn = new DBContext().getConnection();
@@ -271,6 +277,7 @@ public class AccountDAO {
         return null;
     }
 
+    // Dang dung
     public void changepass(String pass, String username) {
         String sql = "update account\n"
                 + "set Password=?\n"
@@ -286,7 +293,4 @@ public class AccountDAO {
         }
     }
 
-    public static void main(String[] args) {
-        System.out.println(getAccountById2(1));
-    }
 }

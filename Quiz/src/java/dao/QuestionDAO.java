@@ -116,17 +116,20 @@ public class QuestionDAO extends DBContext {
         }
     }
     public static void deleteQuestion(String id) {
-        String query = "DELETE  FROM Question  WHERE QuestionID=?";
+        String query = "DELETE FROM CollectionConnect WHERE QuestionID = ?;\n" +
+                        "DELETE FROM Question WHERE QuestionID = ?;";
         try {
             conn = new DBContext().getConnection();
             System.out.println(conn);
             ps = conn.prepareStatement(query);
             ps.setInt(1, Integer.parseInt(id));
+            ps.setInt(2, Integer.parseInt(id));
             ps.executeUpdate();
         } catch (Exception e) {
         }
     }
 
+    
     public Question getQuestionById2(int id) {
         String sql = "Select * From Question Where QuestionId = ?";
 
@@ -152,6 +155,7 @@ public class QuestionDAO extends DBContext {
         return null;
     }
 
+    // Dang dung
     public List<Question> getQuestionByID(int id) {
         String sql = "Select * From CollectionConnect Join Question On CollectionConnect.QuestionID = Question.QuestionID Where CollectionID = ?";
         List<Question> list = new ArrayList<>();
@@ -176,6 +180,7 @@ public class QuestionDAO extends DBContext {
         return list;
     }
 
+    // Dang dung
     public int lastPagesP(int size, int id) {
         int lastPages = 0;
         String createQuery = "Select count (*) From CollectionConnect Where CollectionID = ?" ;

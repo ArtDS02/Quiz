@@ -31,7 +31,7 @@ public class Update extends HttpServlet {
             case 'a': {
                 AccountDAO dao = new AccountDAO();
                 Account s = dao.getAccount(id.substring(1));
-                if (!dao.getAccount(id.substring(1)).getUsername().trim().equals("admin")) {
+                if (dao.getAccount(id.substring(1)).getRole() >= 0) {
                     request.setAttribute("st", s);
                     request.getRequestDispatcher("UpdateUser.jsp").forward(request, response);
                 }
@@ -62,12 +62,11 @@ public class Update extends HttpServlet {
                     String FirstName = request.getParameter("FirstName");
                     String LastName = request.getParameter("LastName");
                     String Password = request.getParameter("Password");
-                    String repass = request.getParameter("repass");
                     String phone = request.getParameter("phone");
                     String email = request.getParameter("email");
                     String DOB = request.getParameter("DOB");
                     String Role = request.getParameter("Role");
-                    if (FirstName.equals("") || LastName.equals("") || Password.equals("") || repass.equals("") || phone.equals("") || email.equals("") || DOB.equals("") || Role.equals("")) {
+                    if (FirstName.equals("") || LastName.equals("") || Password.equals("") || phone.equals("") || email.equals("") || DOB.equals("") || Role == null) {
                         request.getRequestDispatcher("UpdateUser.jsp").forward(request, response);
                     } else {
                         dao.updateAccount(Integer.parseInt(id.substring(1)), FirstName, LastName, UserName, Password, phone, email, DOB, Integer.parseInt(Role));

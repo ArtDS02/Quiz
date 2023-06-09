@@ -19,6 +19,7 @@ public class CollectionConnectDAO {
     static ResultSet rs;
 
 
+    // Dang dung
     public static List<Question> getCollectionById(int id) {
         String sql = "Select * From CollectionConnect Where CollectionID = ?";
         List<Question> list = new ArrayList<>();
@@ -36,6 +37,7 @@ public class CollectionConnectDAO {
         return list;
     }
 
+    // Dang dung
     public static int countNumInCollectionById(int id) {
         String sql = "Select Count(*) From CollectionConnect Where CollectionID = " + id;
 

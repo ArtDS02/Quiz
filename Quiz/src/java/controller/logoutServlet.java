@@ -63,16 +63,6 @@ public class logoutServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.removeAttribute("accountS");
 
-//        session.invalidate("accountS");
-//        Cookie cookieUname = new Cookie("cookUname", "");
-//        Cookie cookiePass = new Cookie("cookPass", "");
-//        Cookie cookieAdminID = new Cookie("role", "");
-//        cookieUname.setMaxAge(0);
-//        cookiePass.setMaxAge(0);
-//        cookieAdminID.setMaxAge(0);
-//        response.addCookie(cookieUname);
-//        response.addCookie(cookiePass);
-//        response.addCookie(cookieAdminID);
         response.sendRedirect("login.jsp");
     }
 

@@ -23,6 +23,7 @@ public class CollectionDAO {
     static PreparedStatement ps;
     static ResultSet rs;
 
+    //Dang dung
     public static List<Collection> getAllCollection() {
         List<Collection> list = new ArrayList<>();
 

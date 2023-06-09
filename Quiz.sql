@@ -12,6 +12,7 @@ Create Table Account(
 	DOB VARCHAR(50),
 	[Role] Int
 )
+select * from Account
 
 Create Table [Collection](
 	CollectionID Int IDENTITY(1,1) PRIMARY KEY,
@@ -29,7 +30,7 @@ Create Table Question(
 	AnswerD NVarchar(Max),
 	TrueAnswer Varchar(10)
 )
-select * from Account
+select * from Question
 
 Create Table [CollectionConnect](	
 	CollectionID Int References [Collection](CollectionID),

@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Update User</title>
-        <link rel="stylesheet" href="css/register.css" />
+        <link rel="stylesheet" href="css/register1.css" />
     </head>
     <body>
                 
@@ -27,8 +27,6 @@
                 <input type="password" class="register_input" name="UserName">
                 <lable class="register_text">Password</lable>
                 <input type="text" class="register_input" name="Password">
-                <lable class="register_text">Re-Password</lable>
-                <input type="password" class="register_input" name="repass">
                 <lable class="register_text">Phone</lable>
                 <input type="text" class="register_input" name="phone">
                 <lable class="register_text">Email</lable>
@@ -36,8 +34,8 @@
                 <lable class="register_text">Date of birth</lable>
                 <input type="date" class="register_input" name="DOB">
                 <lable class="register_text">Student or Teacher?</lable><br>
-                <h2>Teacher</h2><input type="radio"  name="Role" value="2"> 
-                <h2>Student</h2><input type="radio"  name="Role" value="1"> 
+                <h2>Teacher</h2><input type="radio"  name="Role" value="1"> 
+                <h2>Student</h2><input type="radio"  name="Role" value="2"> 
                 <button class="register_btn" type="submit">Update</button>
             </form>
         </div>    
